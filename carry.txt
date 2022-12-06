@@ -204,3 +204,6 @@ top_c = {}
 for c in cluster_frequency:
     top_c[c] = cluster_frequency[c].reset_index()["desc_rare"]
 pd.DataFrame(top_c)
+
+array([[42269,  3171],
+       [ 6512,   510]], dtype=int64)
