@@ -1,0 +1,206 @@
+5min 44s ± 1.08 s per loop (mean ± std. dev. of 7 runs, 1 loop each)
+xgboost classifier
+
+'fasttext-wiki-news-subwords-300' 
+
+{0: desc_rare
+business     34
+debts        33
+lending      32
+much         31
+late         29
+dtype: int64, 1: desc_rare
+thanks       13
+expenses     10
+great         8
+live          7
+allow         7
+dtype: int64, 2: desc_rare
+current      31
+back         29
+much         24
+late         22
+payoff       22
+dtype: int64, 3: desc_rare
+much         17
+expenses     15
+medical      13
+able         13
+funds        13
+dtype: int64, 4: desc_rare
+much         40
+debts        33
+expenses     30
+back         29
+funds        28
+dtype: int64, 5: desc_rare
+amount       14
+balance      13
+business     13
+last         12
+currently    12
+dtype: int64}
+
+
+{'0': {'precision': 0.8665054016932823,
+  'recall': 0.9302156690140845,
+  'f1-score': 0.8972309782320289,
+  'support': 45440},
+ '1': {'precision': 0.13854930725346373,
+  'recall': 0.07262888066078041,
+  'f1-score': 0.09530038307016725,
+  'support': 7022},
+ 'accuracy': 0.8154283100148679,
+ 'macro avg': {'precision': 0.502527354473373,
+  'recall': 0.5014222748374324,
+  'f1-score': 0.4962656806510981,
+  'support': 52462},
+ 'weighted avg': {'precision': 0.769069015448831,
+  'recall': 0.8154283100148679,
+  'f1-score': 0.7898931596352047,
+  'support': 52462}}
+
+{0: desc_rare
+business     34
+debts        33
+lending      32
+much         31
+late         29
+club         27
+save         27
+last         26
+i've         25
+back         24
+dtype: int64, 1: desc_rare
+thanks       13
+expenses     10
+great         8
+live          7
+allow         7
+way           6
+back          6
+lending       6
+much          6
+bill          6
+dtype: int64, 2: desc_rare
+current      31
+back         29
+much         24
+late         22
+payoff       22
+business     22
+getting      21
+trying       20
+save         19
+financial    19
+dtype: int64, 3: desc_rare
+much         17
+expenses     15
+medical      13
+able         13
+funds        13
+balance      13
+two          13
+back         13
+trying       13
+due          13
+dtype: int64, 4: desc_rare
+much         40
+debts        33
+expenses     30
+back         29
+funds        28
+well         27
+currently    27
+late         26
+current      26
+always       25
+dtype: int64, 5: desc_rare
+amount       14
+balance      13
+business     13
+last         12
+currently    12
+debts        12
+k            11
+able         11
+great        11
+much         11
+dtype: int64}
+{0: desc_rare
+ business     34
+ debts        33
+ lending      32
+ much         31
+ late         29
+ club         27
+ save         27
+ last         26
+ i've         25
+ back         24
+ dtype: int64,
+ 1: desc_rare
+ thanks       13
+ expenses     10
+ great         8
+ live          7
+ allow         7
+ way           6
+ back          6
+ lending       6
+ much          6
+ bill          6
+ dtype: int64,
+ 2: desc_rare
+ current      31
+ back         29
+ much         24
+ late         22
+ payoff       22
+ business     22
+ getting      21
+ trying       20
+ save         19
+ financial    19
+ dtype: int64,
+ 3: desc_rare
+ much         17
+ expenses     15
+ medical      13
+ able         13
+ funds        13
+ balance      13
+ two          13
+ back         13
+ trying       13
+ due          13
+ dtype: int64,
+ 4: desc_rare
+ much         40
+ debts        33
+ expenses     30
+ back         29
+ funds        28
+ well         27
+ currently    27
+ late         26
+ current      26
+ always       25
+ dtype: int64,
+ 5: desc_rare
+ amount       14
+ balance      13
+ business     13
+ last         12
+ currently    12
+ debts        12
+ k            11
+ able         11
+ great        11
+ much         11
+ dtype: int64}
+
+top_c = {}
+for c in cluster_frequency:
+    top_c[c] = cluster_frequency[c].reset_index()["desc_rare"]
+pd.DataFrame(top_c)
