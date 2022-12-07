@@ -207,3 +207,17 @@ pd.DataFrame(top_c)
 
 array([[42269,  3171],
        [ 6512,   510]], dtype=int64)
+       
+       
+from sklearn.metrics import confusion_matrix 
+confusiondata = confusion_matrix(y_test, xgb_predict)
+yticklabels = ["Positive", "Negative"]
+xticklabels = ["Positive", "Negative"]
+ax = plt.axes()
+fig = sns.heatmap(confusiondata,linewidths=.5, annot=True, ax=ax, vmin = 0, vmax = 200,cmap="icefire",cbar = False,fmt='g')
+ax.set_title("Confusion Matrix for Classification")
+figure = fig.get_figure()    
+
+figure.savefig("ConfusionMatrix_nlp.png") 
+
+
